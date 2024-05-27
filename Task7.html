@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     7.(a) Use .then .catch to print the value of the following promise
+      // let r = new Promise((resolve) => {
+      //     resolve("Completed");
+      //   })
+
+      let r = new Promise(function (resolve) {
+        resolve("completed");
+      });
+      r.then(function (resolve) {
+        console.log(resolve);
+      }).catch(function () {
+        console.log(err);
+      });
+
+      //(b) Use async/await and try..catch to get the error in the following promise
+      // function sayHello() {
+      //     let promise = new Promise((resolve, reject) => {
+      //     setTimeout(reject("An error has occurred"), 1000);
+      //   });
+      //     return promise;
+      // }
+
+      const task7 = async function () {
+        try {
+          function sayHello() {
+            let promise = new Promise((resolve, reject) => {
+              setTimeout(reject("An error has occurred"), 1000);
+            });
+            return promise;
+          }
+          sayHello();
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      task7();
+    </script>
+  </body>
+</html>

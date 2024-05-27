@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+      p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Lo to Console To check result</p>
+    <script>
+      //         5. Complete the following using https://jsonplaceholder.typicode.com/users/1/todos api.
+      // (a) Use javascript .filter function to get all todos that are completed
+      // (b) Use javascript .map function to create new data. The "completed" field should be renamed to "done".
+      const task5 = async function () {
+        try {
+          const res = await fetch(
+            "https://jsonplaceholder.typicode.com/users/1/todos"
+          );
+          console.log(res);
+
+          const data = res.json();
+          console.log(data);
+
+          //   Filter function
+          const todas = data.filter((todo) => todo.completed);
+          console.log("Completed Todos:", completedTodos);
+
+          //   Map Function
+          const completed = data.filter((todo) => todo.completed);
+          console.log("Completed Todos:", completedTodos);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      task5();
+
+      //
+    </script>
+  </body>
+</html>

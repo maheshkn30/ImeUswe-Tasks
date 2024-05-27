@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Task 3</title>
+    <style>
+      p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Log to Console to Check Result</p>
+    <script>
+      //  3.Implement a JavaScript function that sends an HTTP POST request to create a new user on the JSONPlaceholder API with the following data:
+      // Use https://jsonplaceholder.typicode.com/users
+      //  name : "Imeuswe App" and email: "imeuswe@example.com".
+
+      let task3 = async function () {
+        const createData = {
+          name: "Imeuswe App",
+          email: "imeuswe@example.com",
+        };
+
+        try {
+          const res = await fetch(
+            "https://jsonplaceholder.typicode.com/users",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(createData),
+            }
+          );
+          const data = await res.json();
+          console.log("Created data");
+          console.log(data);
+          console.log("Name -", data.name);
+          console.log("Email -", data.email);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      task3();
+    </script>
+  </body>
+</html>

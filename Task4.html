@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+      p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Lo to Console To check result</p>
+    <script>
+      //  4. Implement a JavaScript function that sends HTTP DELETE request to delete a user with the id of 2.
+      // Use https://jsonplaceholder.typicode.com/users/2 api.
+
+      const task4 = async function () {
+        try {
+          const res = await fetch(
+            "https://jsonplaceholder.typicode.com/users/2",
+            {
+              method: "DELETE",
+            }
+          );
+          console.log(res);
+          console.log(res.status);
+          console.log("User Deleted");
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      task4();
+    </script>
+  </body>
+</html>

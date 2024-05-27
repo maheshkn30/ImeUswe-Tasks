@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  8. Given the following object, use optional chaining to retrieve the value of the 'price' property if it exists. Otherwise, return the string 'Price not available'.
+
+      //  const product = {
+      //    name: 'Smartphone',
+      //    details: {
+      //      brand: 'XYZ',
+      //      color: 'Black'
+      //       price property is missing
+      //    }
+      //  };
+
+      const product = {
+        name: "Smartphone",
+        details: {
+          brand: "XYZ",
+          color: "Black",
+        },
+      };
+      const price = product.details?.price ?? "Price not available";
+      console.log(price);
+    </script>
+  </body>
+</html>

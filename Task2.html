@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+      p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Lo to Console To check result</p>
+    <script>
+      //2.Create a JavaScript function that fetches a
+      //specific post with an ID of 5 from the JSONPlaceholder API and console.log the result.
+
+      // Or
+      const demo3 = async function () {
+        try {
+          const res = await axios.get(
+            "https://jsonplaceholder.typicode.com/posts/5"
+          );
+          console.log(res);
+          console.log(res.data);
+          console.log("Id-", res.data.id);
+          console.log("UserId-", res.data.userId);
+          console.log(res.data.title);
+          console.log(res.data.body);
+          const data = await res.json();
+        } catch (err) {
+          console.log();
+        }
+      };
+      demo3();
+    </script>
+  </body>
+</html>
